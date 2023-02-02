@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { StudentModule } from './app/student/student.module';
 import { CourseModule } from './app/course/course.module';
+import { EnrollmentModule } from './app/enrollment/enrollment.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { CourseModule } from './app/course/course.module';
     }),
     StudentModule,
     CourseModule,
+    EnrollmentModule,
   ],
   controllers: [],
   providers: [],
