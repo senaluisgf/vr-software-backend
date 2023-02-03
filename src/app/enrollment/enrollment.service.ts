@@ -21,9 +21,14 @@ export class EnrollmentService {
   async enrollmentStudentInCourse(
     enrollment: CreateEnrollment,
   ): Promise<EnrollmentEntity> {
-    const createdEnrollment = await this.enrollmentRepository.save(enrollment);
-
-    return createdEnrollment;
+    try {
+      const createdEnrollment = await this.enrollmentRepository.save(
+        enrollment,
+      );
+      return createdEnrollment;
+    } catch {
+      return null;
+    }
   }
 
   async deleteEnrollmentStudentInCourse(enrollment: DeleteEnrollment) {
