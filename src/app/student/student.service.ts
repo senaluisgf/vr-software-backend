@@ -36,15 +36,12 @@ export class StudentService {
   }
 
   async deleteStudent(studentId: number) {
-    const student = await this.studentRepository.findOneBy({
-      id: studentId,
-      courses: null,
-    });
-    if (!student || student.courses?.length) {
+    try {
+      await this.studentRepository.delete({ id: studentId });
+    } catch {
       return false;
     }
 
-    await this.studentRepository.delete({ id: studentId });
     return true;
   }
 }

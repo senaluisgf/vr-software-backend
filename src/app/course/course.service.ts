@@ -36,15 +36,12 @@ export class CourseService {
   }
 
   async deleteCourse(courseId: number) {
-    const course = await this.courseRepository.findOneBy({
-      id: courseId,
-      students: null,
-    });
-    if (!course || course.students?.length) {
+    try {
+      await this.courseRepository.delete({ id: courseId });
+    } catch {
       return false;
     }
 
-    await this.courseRepository.delete({ id: courseId });
     return true;
   }
 }
