@@ -1,4 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Post } from '@nestjs/common';
+import { CreateEnrollment } from './dto/create-enrollment.dto';
+import { DeleteEnrollment } from './dto/delete-enrollment.dto';
 import { EnrollmentEntity } from './enrollment.entity';
 import { EnrollmentService } from './enrollment.service';
 
@@ -9,5 +11,17 @@ export class EnrollmentController {
   @Get()
   async getAll(): Promise<EnrollmentEntity[]> {
     return this.service.getAll();
+  }
+
+  @Post()
+  async enrollmentStudentInCourse(
+    @Body() enrollment: CreateEnrollment,
+  ): Promise<EnrollmentEntity> {
+    return this.service.enrollmentStudentInCourse(enrollment);
+  }
+
+  @Delete()
+  async deleteEnrollmentStudentInCourse(@Body() enrollment: DeleteEnrollment) {
+    return this.service.deleteEnrollmentStudentInCourse(enrollment);
   }
 }
