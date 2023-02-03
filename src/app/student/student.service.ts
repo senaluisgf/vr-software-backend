@@ -31,7 +31,6 @@ export class StudentService {
 
   async createStudent({ name }: CreateStudent): Promise<StudentEntity> {
     const createdStudent = await this.studentRepository.save({ name });
-    // await this.studentRepository.save;
 
     return createdStudent;
   }
