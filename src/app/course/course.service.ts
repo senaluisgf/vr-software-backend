@@ -18,6 +18,12 @@ export class CourseService {
     return courses;
   }
 
+  async getOne(id: number): Promise<CourseEntity> {
+    const course = await this.courseRepository.findOneBy({ id });
+
+    return course;
+  }
+
   async updateCourse(
     courseId: number,
     course: UpdateCourse,

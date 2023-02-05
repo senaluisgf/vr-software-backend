@@ -23,6 +23,13 @@ export class CourseController {
     return courses;
   }
 
+  @Get(':courseId')
+  async getOne(@Param('courseId') courseId: number): Promise<CourseEntity> {
+    const course = await this.courseService.getOne(courseId);
+
+    return course;
+  }
+
   @Put(':courseId')
   async updateCourse(
     @Param('courseId') courseId: number,

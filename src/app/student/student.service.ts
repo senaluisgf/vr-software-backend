@@ -18,6 +18,12 @@ export class StudentService {
     return students;
   }
 
+  async getOne(id: number): Promise<StudentEntity> {
+    const student = await this.studentRepository.findOneBy({ id });
+
+    return student;
+  }
+
   async updateStudent(
     studentId: number,
     student: UpdateStudent,
