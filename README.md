@@ -1,73 +1,42 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+<!-- # Programming Challenge -->
+## Desafio VR Software - Backend
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+---
+### Inicialização da Aplicação
+#### Instalação de dependências
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+1. clone o repositório;
+2. Caso tenha o docker instalado em sua máquina;
+  2.1 basta executar o comando ```docker-compose up -d```.
 
-## Description
+3. Caso não possui o docker instalado;
+    3.1 Execute o comando ```npm install```;
+    3.2 Após a instalação dos pacotes, execute o comando ```npm start```.
+---
+### Executação da Aplicação
+1. Para iniciar a aplicação, basta executar o comando ```docker-compose up -d``` ou ```npm start```.
+1. A api ficará disponível na [porn inicial da aplicação](http://localhost:3000) (http://localhost:3000)
+---
+#### Desafios encontrados durante a realização do desafio
+- **NestJs** - Já tenho certo domínio sobre o framework NestJs devido o contato que tive com desenvolmento de aplicações backend.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- **Postgres + Docker** - Já tenho certo domínio de bancos de dados relacionais como o Postgres. Trabalhando com o banco rodando em um container docker foi a solução que adotei pois considerei a mais prática de resolver.
 
-## Installation
+#### Rotas Desenvolvidas
+- **Listagem de cursos** - *GET http://localhost:3000/courses*
+- **Listar apenas um curso** - *GET http://localhost:3000/courses/1*
+- **Criação de cursos** - *POST http://localhost:3000/courses*
+- **Edição de cursos** - *PUT http://localhost:3000/courses/1*
+- **Remoção de curso** - *DELETE http://localhost:3000/courses*
 
-```bash
-$ yarn install
-```
+- **Listagem de alunos** - *GET http://localhost:3000/students*
+- **Listar apenas um aluno** - *GET http://localhost:3000/students/1*
+- **Criação de alunos** - *POST http://localhost:3000/students*
+- **Edição de alunos** - *PUT http://localhost:3000/students/1*
+- **Remoção de aluno** - *DELETE http://localhost:3000/students*
 
-## Running the app
-
-```bash
-# development
-$ yarn run start
-
-# watch mode
-$ yarn run start:dev
-
-# production mode
-$ yarn run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- **Listagem de matrículas** - *GET http://localhost:3000/enrollments*
+- **Listar apenas uma matrícula** - *GET http://localhost:3000/enrollments/1*
+- **Criação de matrículas** - *POST http://localhost:3000/enrollments*
+- **Edição de matrículas** - *PUT http://localhost:3000/enrollments/1*
+- **Remoção de matrícula** - *DELETE http://localhost:3000/enrollments*
