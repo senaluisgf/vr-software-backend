@@ -13,4 +13,4 @@ RUN yarn && yarn cache clean
 
 COPY . .
 
-CMD [ "npm", "run", "start:dev" ]
+CMD [ "npm", "run", "start" ]
